@@ -35,9 +35,9 @@ Our `searches/search.html.erb` is already set up to post a `:zipcode` param to o
 ```ruby
 # searches_controller.rb
   def foursquare
-    Faraday.get 'https://api.foursquare.com/v2/venues/search' do |req|
-      req.params['client_id'] = 'client_id'
-      req.params['client_secret'] = 'client_secret'
+    @resp = Faraday.get 'https://api.foursquare.com/v2/venues/search' do |req|
+      req.params['client_id'] = '4BJ410XWCRRPFCOSJVH4BPXYQ3SBUT4XZPONXMQINLIFQH55'
+      req.params['client_secret'] = 'CU21FED1XCXTHFGUMFOGVZBS4UBGTYXSZOYLD2XD1JHURDWH'
       req.params['v'] = '20160201'
       req.params['near'] = params[:zipcode]
       req.params['query'] = 'coffee shop'
